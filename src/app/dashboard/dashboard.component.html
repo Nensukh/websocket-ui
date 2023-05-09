@@ -1,0 +1,49 @@
+
+<div class="row">
+    <div class="col-6">
+      <div class="chart-container" style="width:500px">
+        <canvas  id="barChart" >{{ barChart }}</canvas>
+      </div>
+    </div>
+    <div class="col-6">
+
+      <div class="chart-container" style="width:500px">
+        <canvas  id="lineChart" >{{ lineChart }}</canvas>
+
+      </div>
+    </div>
+ <!-- <div class="col-6">
+    <app-payment-event-list></app-payment-event-list>
+  </div>-->
+
+  <div class="col-6">
+
+    <table id="conversation" class="table table-striped" style="max-height:500px; width:700px; overflow: scroll">
+      <thead>
+      <tr>
+        <th style="width:200px">Txn Id</th>
+        <th style="width:200px">Payment Type</th>
+        <th style="width:200px; align:right">Amount</th>
+        <th style="width:300px">Date / Time</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody id="greetings">
+      <tr *ngFor="let data of this.paymentEvents"  [ngStyle]="{'color': (data['paymentType']=='Credit') ? '#73c7af' : 'black' }">
+        <td >{{data['txnId']}}</td>
+        <td >{{data['paymentType']}}</td>
+        <td style="align: right">{{data['amount'] | currency:'USD':'symbol' }}<i class="fa fa-arrow-up" aria-hidden="true"></i></td>
+        <td>{{data['txnDateTime']}}</td>
+        <td><i class="fa fa-arrow-up"></i></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-6">
+    <app-payment-event-publisher></app-payment-event-publisher>
+  </div>
+</div>
+
+
+

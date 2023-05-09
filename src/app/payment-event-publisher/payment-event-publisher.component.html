@@ -1,0 +1,18 @@
+
+<div class="row" style="margin-top: 50px;border-style: solid;border-width: 1px; padding:30px">
+  <h2 style="margin-bottom: 20px"> Test Data Preparation</h2>
+  <div class="col-6">
+<input matInput placeholder="No of Events "   [(ngModel)]="noOfRecords">
+<button mat-stroked-button color="primary" (click)="publishEvents()">Publish</button>
+  </div>
+
+  <div class="col-6">
+    <select [(ngModel)]="paymentEvent.paymentType" style="width: 75px; height:30px">
+      <option>Credit</option>
+      <option>Debit</option>
+    </select>
+    <input matInput placeholder="Amount"  [(ngModel)]="paymentEvent.amount">
+
+    <button mat-stroked-button color="primary" (click)="publishEvent(paymentEvent)">Publish Single Event</button>
+  </div>
+</div>
